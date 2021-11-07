@@ -1,0 +1,52 @@
+file = open('data.txt', 'r')
+text = []
+for line in file:
+  text.append(str(line))
+
+punc = '''•123456789!()-[]{};:'"\,<>./?@#$%^&*_~'''
+
+new_text = []
+n = len(text)
+for i in range(n):
+  line = ""
+  for j in text[i]:
+    if j not in punc:
+      line += j
+  new_text.append(line)
+
+for line in new_text:
+  print(line)
+
+words = []
+for i in text:
+  words += i.split()
+
+#taking counting the number of words in data file
+len(words)
+
+
+# Count Hadoop word in Data file
+had=0
+hadInd=[]
+for i in range(len(words)):
+  if words[i] == 'Hadoop' or words[i] == 'Hadoop:':
+    hadInd.append(i)
+    had=had+1
+print(had)
+
+
+#Indexes of word Hadoop
+print(hadInd)
+
+
+java=0
+javaInd=[]
+for i in range(len(words)):
+  if words[i] == 'java':
+    javaInd.append(i)
+    java=java+1
+print(java)
+
+
+#Indexes of word Java
+print(javaInd)
